@@ -9,6 +9,8 @@
  */
 
 require_once(ABSPATH . 'wp-admin/includes/image.php');
+require_once(ABSPATH . 'wp-admin/includes/class-wp-filesystem-base.php');
+require_once(ABSPATH . 'wp-admin/includes/class-wp-filesystem-direct.php');
 
 class Dummy
 {
@@ -268,40 +270,40 @@ class Dummy
         $content .= '<p>Theo danh sách của Liên minh Bảo tồn Thiên nhiên Quốc tế, có 14 trong số 89 loài thuộc bộ cá voi còn tồn tại hiện nay đang ở tình trạng nguy cấp hoặc cực kỳ nguy cấp. Cụ thể bao gồm 5 loài cá voi, 7 loài cá heo và 2 loài cá heo chuột.</p>';
         $content .= '<h2>A1 - Cá voi trơn Bắc Đại Tây Dương – Cực kì nguy cấp</h2>';
         $content .= '<p>Vì có hàm lượng chất béo cao và dễ bắt gặp, cá voi trơn Bắc Đại Tây Dương là đối tượng săn bắt chủ yếu nhất vào thế kỉ 18 và 19. Tên tiếng anh của loài cá voi này là North Atlantic “Right” Whale. Chữ “Right” xuất phát từ tư tưởng: chúng là loài “phù hợp” để săn bắt do bơi gần bờ và dễ dàng nổi lên mặt nước sau khi bị giết.</p>';
-        $content .= '<img class="aligncenter" src="https://basewp.lndo.site/demo/anh-1.jpeg"/>';
+        $content .= '<img class="aligncenter" src="' . home_url('/demo/anh-1.jpeg') . '"/>';
         $content .= '<h3>A1-1 - Cá heo Baiji – Có thể đã tuyệt chủng</h3>';
         $content .= '<p>Ngày nay, tổng số lượng cá thể cá voi trơn còn tồn tại chỉ khoảng 500, với 400 ở phía tây bắc Đại Tây Dương và ít hơn 100 ở khu vực phía đông Bắc Đại Tây Dương.</p>';
         $content .= '<p>Cá heo Baiji, hay Cá heo Sông Dương Tử, hiếm gặp đến mức chúng được coi là đã gần như hoàn toàn tuyệt chủng. Năm 2006, các nhà khoa học chính thức tuyên bố sự tuyệt chúng của cá heo Baiji, mặc dù sau đó một người dân địa phương lại cho rằng đã nhìn thấy chúng vào năm 2016. Nếu sự thật đúng như tuyên bố của các nhà khoa học, cá heo Baiji sẽ là loài cá heo đầu tiên tuyệt chủng vì chịu tác động phía từ con người.</p>';
         $content .= '<p>Baiji là loài đặc hữu của sông Dương Tử, được người dân kính trọng gọi với danh xưng “nữ thần sông”. Tuy nhiên, do hoạt động đánh bắt khiến nguồn thức ăn của cá heo Baiji bị cạn kiệt, đồng thời hoạt động xả thải công nghiệp làm ô nhiễm môi trường sống, chúng đã gần như hoàn toàn biến mất từ năm 2002. Vì sự kiện người dân cho rằng đã nhìn thấy chúng năm 2016, các nhà khoa học lại một lần nữa dấy lên hi vọng và chuyển chúng từ trạng thái đã tuyệt chủng thành cực kì nguy cấp.</p>';
-        $content .= '<img class="aligncenter" src="https://basewp.lndo.site/demo/anh-2.jpeg"/>';
+        $content .= '<caption class="wp-caption alignleft"><img class="aligncenter" src="' . home_url('/demo/anh-2.jpeg') . '"/></caption>';
         $content .= '<h3>A1-2Lịch sử của liệu pháp hương thơm</h3>';
         $content .= '<p>Từ 2.400 năm trước, “cha đẻ của ngành y học” đã hiểu được sức mạnh của chất thơm trong việc phục hồi sức khỏe của một người. Hippocrates nói: “Việc chữa bệnh bắt đầu bằng việc tắm nước thơm và mát-xa hàng ngày”. </p>';
         $content .= '<p>Một trong những lợi ích lớn nhất của quả bóng sấy là chúng sấy khô hiệu quả hơn nhiều so với các tấm sấy và máy sấy thông thường. Những quả bóng này sẽ làm khô nhanh hơn tới 40% nhờ vào việc chúng hấp thụ độ ẩm sau khi giặt. Từ đó giúp tiết kiệm được nhiều năng lượng hơn.</p>';
-        $content .= '<img class="aligncenter" src="https://basewp.lndo.site/demo/anh-3.jpeg"/>';
+        $content .= '<img class="aligncenter" src="' . home_url('/demo/anh-3.jpeg') . '"/>';
         $content .= '<h3>A1-3 - Tiết kiệm thời gian giặt sấy</h3>';
         $content .= '<p>“Nó có nhiều ảnh hưởng đến hoạt động bình thường của cơ thể. Ví dụ, gần đây chúng tôi đã chỉ ra rằng cùng một loại thiếu hụt nghiêm trọng làm tăng nguy cơ sa sút trí tuệ cũng có liên quan đến nguy cơ viêm nhiễm mức độ thấp và bệnh tim lớn hơn”.</p>';
         $content .= '<p>Cô nói, nghiên cứu của Hypponen, công trình lớn nhất từ trước đến nay, với hơn 300.000 người tham gia, đã được truyền cảm hứng, bởi vì “từ lâu người ta đã nghi ngờ các thụ thể vitamin D làm trung gian cho các tác động của hormone hoạt động có trong não người, và kết quả là nó có thể có những tác động đối với sự phát triển của các bệnh về nhận thức thần kinh như chứng sa sút trí tuệ”.</p>';
-        $content .= '<img class="aligncenter" src="https://basewp.lndo.site/demo/anh-4.jpeg"/>';
+        $content .= '<caption class="wp-caption alignright"><img src="' . home_url('/demo/anh-4.jpeg') . '"/></caption>';
         $content .= '<h2>A2 - Ủ bia bằng bánh mì thừa ở London, Anh</h2>';
         $content .= '<p>Thứ nhất, sự hiện diện của các thụ thể vitamin D ở vùng dưới đồi cho thấy rằng vitamin D hoạt động sẽ thúc đẩy sự phát triển và trưởng thành của các tế bào thần kinh - các chất dẫn truyền thông tin trong não.</p>';
         $content .= '<p>Thứ hai, vitamin D hoạt tính có liên quan đến việc giảm đông máu và điều chỉnh hệ thống ảnh hưởng đến huyết áp - giúp bảo vệ chống lại đột quỵ , có thể là chất xúc tác cho chứng sa sút trí tuệ.</p>';
-        $content .= '<img class="aligncenter" src="https://basewp.lndo.site/demo/anh-5.jpeg"/>';
+        $content .= '<img class="aligncenter" src="' . home_url('/demo/anh-5.jpeg') . '"/>';
         $content .= '<h3>A2 - 1 - Thành phố Rotterdam dùng bánh mì bỏ đi để tái tạo thành năng lượng</h3>';
         $content .= '<p>Hypponen nói rằng chế độ ăn uống là một nguồn cung cấp vitamin D nghèo nàn; Trong khi một số thực phẩm như cá dầu, trứng và sữa có chứa một số vitamin D, thực tế là không thể có đủ từ thực phẩm, trừ khi chế độ ăn uống cũng bao gồm các sản phẩm thực phẩm được tăng cường vitamin D.</p>';
         $content .= '<p>Cô nói rằng không phải lúc nào cũng cần một bài kiểm tra. Những người có lối sống năng động và thường xuyên ra ngoài trời trong những giờ có ánh sáng mặt trời, có khả năng có đủ lượng vitamin D trong năm. Trong những tháng mùa đông ít nắng, bổ sung vitamin D đơn giản không cần kê đơn có thể giúp duy trì mức độ đó.</p>';
-        $content .= '<img class="aligncenter" src="https://basewp.lndo.site/demo/anh-6.jpeg"/>';
+        $content .= '<img class="aligncenter" src="' . home_url('/demo/anh-6.jpeg') . '"/>';
         $content .= '<h3>A2 - 2 - Biến bánh mì thừa trở lại thành bột để tiếp tục sử dụng ở Pháp</h3>';
         $content .= '<p>“Chúng tôi thấy tác động mạnh nhất đến nguy cơ sa sút trí tuệ với những người tham gia có nồng độ rất thấp (dưới 25nmol / L). Nguy cơ tăng nhẹ đối với những người ở trong khoảng 25-50 nmol / L, nhưng hầu hết, theo mô hình của chúng tôi, dường như những người đã đạt được mức từ 50 nmol / L trở lên gần như không có nguy cơ”.</p>';
         $content .= '<p>Nó cho thấy rằng ngăn ngừa sự thiếu hụt vitamin D trong dân số sẽ giúp giảm nguy cơ sa sút trí tuệ, cũng như các nguy cơ có thể tránh được của nhiều bệnh khác, cô nói.</p>';
-        $content .= '<img class="aligncenter" src="https://basewp.lndo.site/demo/anh-7.jpeg"/>';
+        $content .= '<img class="aligncenter" src="' . home_url('/demo/anh-7.jpeg') . '"/>';
         $content .= '<h3>A2 - 3 - Nghiên cứu của Hypponen có ý nghĩa như thế nào?</h3>';
         $content .= '<p>NHS cho biết bạn không thể dùng quá liều vitamin D khi tiếp xúc với ánh nắng mặt trời. Nhưng bạn có thể bị cháy nắng. Vì vậy, hãy che chắn và bảo vệ da bằng kem chống nắng có chỉ số SPF cao. May mắn thay, trong suốt mùa hè, hầu hết mọi người chỉ cần ở dưới ánh nắng chói chang vài phút mỗi ngày để có đủ vitamin D.</p>';
         $content .= '<p>Nhưng chất dinh dưỡng nhỏ bé quan trọng này đã có lịch sử lâu đời ngay cả trước khi Windaus giải thích. Còi xương, bệnh xương do thiếu vitamin D, đã được ghi nhận hơn 200 năm và lần đầu tiên được mô tả trong các tài liệu y khoa vào năm 1650.</p>';
-        $content .= '<img class="aligncenter" src="https://basewp.lndo.site/demo/anh-8.jpeg"/>';
+        $content .= '<img class="aligncenter" src="' . home_url('/demo/anh-8.jpeg') . '"/>';
         $content .= '<h3>A2 - 4 - Mùi hương ảnh hưởng như thế nào đến hạnh phúc?</h3>';
         $content .= '<p>Trong những năm gần đây, loại vitamin tan trong chất béo này được quảng cáo là tốt cho chúng ta theo nhiều cách, từ bảo vệ sức khỏe của xương đến tăng cường khả năng miễn dịch. Các nghiên cứu trong phòng thí nghiệm cho thấy vitamin D thậm chí có thể làm giảm sự phát triển của tế bào ung thư, giúp kiểm soát nhiễm trùng và giảm viêm.</p>';
         $content .= '<p>Sau khi xé nhỏ số bánh mì cũ, họ sẽ đưa chúng qua máy nghiền thành vụn nhỏ và dùng số vụn này thay thế 20% lượng bột mì cần sử dụng trong mỗi mẻ bánh. Bánh thành phẩm khi ra lò mặc dù có màu đậm hơn nhưng hương vị hoàn toàn không bị ảnh hưởng.</p>';
-        $content .= '<caption class="wp-caption aligncenter"><img src="https://basewp.lndo.site/demo/anh-9.jpeg"/><figcaption class="wp-caption-text">Vì sao nói gỗ xoài là một nguyên liệu hữu ích?</figcaption></caption>';
+        $content .= '<caption class="wp-caption aligncenter"><img src="' . home_url('/demo/anh-9.jpeg') . '"/><figcaption class="wp-caption-text">Vì sao nói gỗ xoài là một nguyên liệu hữu ích?</figcaption></caption>';
         $content .= '<p>Nhắc đến bánh mì không thể bỏ qua Pháp. Người dân Pháp sử dụng bánh mì như một món ăn chính hàng ngày và chỉ ưa chuộng bánh mì tươi, không qua đóng gói bảo quản. Đó là lí do tại sao có đến hơn 150,000 tấn bánh mì bị bỏ đi ở Pháp mỗi năm.</p>';
         $content .= '<p>Guillaume Devinat, chủ của một trong số hơn 100 tiệm bánh ở Pháp đang sử dụng loại máy này, chia sẻ anh cùng những người thợ tại cửa hàng đang thử một công thức bánh mì baguette mới có chứa thành phần “bột” nghiền từ những chiếc bánh mì thừa chưa bán được ngày hôm trước.</p>';
         $content .= '<p>Guillaume Devinat cho biết thêm nếu được làm khô đúng cách, vụn bánh mì có thể bảo quản vài tháng và vì được nhiều khách hàng ủng hộ, anh cũng đang thử nghiệm thêm nhiều công thức khác sử dụng thành phần “vụn bánh mì giải cứu”.</p>';
@@ -312,7 +314,7 @@ class Dummy
         $content .= '<p>Trong khi liệu pháp hương thơm có thể có nhiều tác dụng tích cực về mặt sinh lý, cả Cheung và Lai đều không khẳng định rằng nó nên được sử dụng thay cho các phương pháp điều trị và y học hiện đại. Thay vào đó, liệu pháp hương thơm có thể là một bổ sung có lợi.</p>';
         $content .= '<blockquote>Dữ liệu cho thấy, từ mức 30 độ C trở đi, cứ 1 độ tăng, trung bình giấc ngủ của mỗi người giảm 14 phút. Nhiệt độ càng cao, thời gian ngủ càng giảm (ít hơn 7 tiếng mỗi ngày). Khi đó, con người sẽ có xu hướng ngủ muộn và dậy sớm hơn.</blockquote>';
         $content .= '<h6>A5 - Lợi ích của chúng đối với tinh thần và thể chất</h6>';
-        $content .= '<p>Kết quả này được <a href="https://cyou.vn">CYou VietNam</a> thu thập từ một thí nghiệm quy mô toàn cầu, với sự tham gia của hơn 47,600 người đến từ 68 quốc gia. Tất cả đều được theo dõi bởi một vòng đeo tay có chức năng ghi lại thói quen ngủ, bắt đầu từ tháng 9 năm 2015 đến tháng 10 năm 2017.</p>';
+        $content .= '<p>Kết quả này được <a href="https://shopez.vn">Shop Ez</a> thu thập từ một thí nghiệm quy mô toàn cầu, với sự tham gia của hơn 47,600 người đến từ 68 quốc gia. Tất cả đều được theo dõi bởi một vòng đeo tay có chức năng ghi lại thói quen ngủ, bắt đầu từ tháng 9 năm 2015 đến tháng 10 năm 2017.</p>';
         $content .= '<ul>';
         $content .= '<li>Đổi thuốc melatonin lấy một ít anh đào chua.</li>';
         $content .= '<li>Hai muỗng muối Epsom trong bồn nước ấm.</li>';
@@ -325,6 +327,7 @@ class Dummy
         $content .= '<p>Vitamin D (1.000-2.000 IU mỗi ngày) là cần thiết đối với hầu hết người lớn, ngay cả những người sống trong khu vực tiếp xúc với ánh nắng mặt trời thường xuyên, nhưng không thiết lập nhịp sinh học để phơi nắng mỗi sáng sớm. Thêm vào đó, ánh nắng của buổi sáng sớm có ít tia UVA và UVB nguy hiểm hơn so với ánh nắng buổi chiều.</p>';
         $content .= '<p>Đừng hiểu sai ý tôi, tôi thích phim trực tuyến- nhưng tôi đã nhận ra rằng việc hấp thụ quá nhiều ánh sáng xanh từ màn hình tivi sau khi trời tối làm tăng lo lắng hàng đêm và khiến tôi khó ngủ hơn. Hãy thử sạc điện thoại của bạn và đặt nó ở chế độ im lặng trong phòng khác và lên giường với một cuốn sách.</p>';
 
+        $filesystem = new WP_Filesystem_Direct( true );
         for ($i = 0; $i < 99; $i++) {
             $post = array();
             $post['post_category'] = array($cat_id);
@@ -338,7 +341,7 @@ class Dummy
             $imageUrl = home_url('/demo/posts/') . $images[$i];
             $image_name = basename(parse_url($imageUrl, PHP_URL_PATH));
             $upload_dir = wp_upload_dir();
-            $image_data = file_get_contents($imageUrl);
+            $image_data = $filesystem->get_contents($imageUrl);
             $unique_file_name = wp_unique_filename($upload_dir['path'], $image_name);
             $file_name = basename($unique_file_name);
             if (wp_mkdir_p($upload_dir['path'])) {
